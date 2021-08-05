@@ -199,6 +199,12 @@
     <Compile Include="Vaccination.designer.cs">
       <DependentUpon>Vaccination.cs</DependentUpon>
     </Compile>
+    <Compile Include="VaccineStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VaccineStock.designer.cs">
+      <DependentUpon>VaccineStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="VCNow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vaccination.resx">
       <DependentUpon>Vaccination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VaccineStock.resx">
+      <DependentUpon>VaccineStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VCNow.resx">
       <DependentUpon>VCNow.cs</DependentUpon>
