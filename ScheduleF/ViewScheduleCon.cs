@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VMS.Forms
+namespace newTestvms.ScheduleF
 {
-    public partial class DashPalate : Form
+    public partial class ViewScheduleCon : UserControl
     {
-        public DashPalate()
+        public ViewScheduleCon()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void VcNextBTN_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

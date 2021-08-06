@@ -206,6 +206,18 @@
     <Compile Include="Schedule.designer.cs">
       <DependentUpon>Schedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScheduleF\SheduleData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScheduleF\SheduleData.Designer.cs">
+      <DependentUpon>SheduleData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleF\ViewScheduleCon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScheduleF\ViewScheduleCon.Designer.cs">
+      <DependentUpon>ViewScheduleCon.cs</DependentUpon>
+    </Compile>
     <Compile Include="staff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +320,12 @@
     </Compile>
     <EmbeddedResource Include="Schedule.resx">
       <DependentUpon>Schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleF\SheduleData.resx">
+      <DependentUpon>SheduleData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleF\ViewScheduleCon.resx">
+      <DependentUpon>ViewScheduleCon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="staff.resx">
       <DependentUpon>staff.cs</DependentUpon>
