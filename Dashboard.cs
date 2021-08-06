@@ -81,11 +81,13 @@ namespace VMS.Forms
 
         private void bunifuButton6_Click(object sender, EventArgs e)
         {
+            /*
             Centers C1 = new Centers() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             C1.FormBorderStyle = FormBorderStyle.None;
             this.tabPage5.Controls.Clear();
             this.tabPage5.Controls.Add(C1);
             C1.Show();
+            */
             bunifuPages1.SetPage("CentersPg");
         }
 
@@ -112,7 +114,13 @@ namespace VMS.Forms
         {
             //People Section
 
-            bunifuPages1.SetPage("peopleP");
+
+            WindowsFormsApp1.Form1 P1 = new WindowsFormsApp1.Form1() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            P1.FormBorderStyle = FormBorderStyle.None;
+            this.tabPage2.Controls.Clear();
+            this.tabPage2.Controls.Add(P1);
+            P1.Show();
+            bunifuPages1.SetPage("PeoplePg");
         }
 
         private void VacPanel_Paint(object sender, PaintEventArgs e)
@@ -193,11 +201,19 @@ namespace VMS.Forms
 
         private void VCNowBTN_Click(object sender, EventArgs e)
         {
+            /*
             Forms.VCNow VCN = new Forms.VCNow() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             VCN.FormBorderStyle = FormBorderStyle.None;
             this.tabPage1.Controls.Clear();
             this.tabPage1.Controls.Add(VCN);
             VCN.Show();
+            */
+            newTestvms.Vaccination.VCNowCon VcnCOn = new newTestvms.Vaccination.VCNowCon() { Dock = DockStyle.Fill,  };
+            addPanelC(VcnCOn);
+            
+
+
+
         }
 
         private void StaffBTNClick(object sender, EventArgs e)
@@ -208,6 +224,37 @@ namespace VMS.Forms
             this.tabPage3.Controls.Add(ST1);
             ST1.Show();
             bunifuPages1.SetPage("StaffPg");
+        }
+        private void addPanelC(UserControl uc)
+        {
+
+            panel4.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
+            panel4.Controls.Add(uc);
+            uc.BringToFront();
+
+        }
+        private void addPanelCenter(UserControl uc)
+        {
+
+            CenterPanel.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
+            CenterPanel.Controls.Add(uc);
+            uc.BringToFront();
+
+        }
+
+        private void bunifuButton1_Click_2(object sender, EventArgs e)
+        {
+            //view list of vaccines
+            newTestvms.VaccinationF.ViewListCon viewListCon = new newTestvms.VaccinationF.ViewListCon();
+            addPanelC(viewListCon);
+        }
+
+        private void AddNewCenterBTNClick(object sender, EventArgs e)
+        {
+            newTestvms.Centers.addCenterControl AddnewCenterC1 = new newTestvms.Centers.addCenterControl();
+            addPanelCenter(AddnewCenterC1);
         }
     }
 }

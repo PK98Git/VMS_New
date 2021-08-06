@@ -34,9 +34,13 @@ namespace VMS.Forms
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            Vaccination VC1 = new Vaccination();
-            VC1.Show();
-            this.Hide();
+            
+            
+
+            
+
+             
+
         }
 
         private void VCNow_Load(object sender, EventArgs e)
