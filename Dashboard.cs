@@ -74,11 +74,6 @@ namespace VMS.Forms
 
         }
 
-        private void tabPage4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void bunifuButton6_Click(object sender, EventArgs e)
         {
             /*
@@ -93,13 +88,13 @@ namespace VMS.Forms
 
         private void ScheduleBTN_Click(object sender, EventArgs e)
         {
-            
+            /*
             Forms.Shedule Sche1 = new Forms.Shedule() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             Sche1.FormBorderStyle = FormBorderStyle.None;
             this.tabPage6.Controls.Clear();
             this.tabPage6.Controls.Add(Sche1);
             Sche1.Show();
-            
+            */
             bunifuPages1.SetPage("SchedulePg");
             
         }
@@ -188,16 +183,6 @@ namespace VMS.Forms
 
         }
 
-
-        private void bunifuButton3_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void tabPage6_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void VCNowBTN_Click(object sender, EventArgs e)
         {

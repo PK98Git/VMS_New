@@ -121,7 +121,6 @@ namespace VMS.Forms
             this.Controls.Add(this.label1);
             this.Name = "DashPalate";
             this.Text = "DashPalate";
-            this.Load += new System.EventHandler(this.DashPalate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
