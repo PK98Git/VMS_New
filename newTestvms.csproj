@@ -143,6 +143,7 @@
     <Compile Include="DashPalate.designer.cs">
       <DependentUpon>DashPalate.cs</DependentUpon>
     </Compile>
+    <Compile Include="dbconnection.cs" />
     <Compile Include="doctor.cs">
       <SubType>UserControl</SubType>
     </Compile>

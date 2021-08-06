@@ -44,8 +44,8 @@ namespace StocksNMSP
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-         //   var newForm = new VaccineStock();
-          //  newForm.Show();
+            var newForm = new VaccineStock();
+            newForm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
