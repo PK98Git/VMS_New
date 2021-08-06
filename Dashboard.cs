@@ -112,7 +112,13 @@ namespace VMS.Forms
         {
             //People Section
 
-            bunifuPages1.SetPage("peopleP");
+
+            WindowsFormsApp1.Form1 P1 = new WindowsFormsApp1.Form1() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            P1.FormBorderStyle = FormBorderStyle.None;
+            this.tabPage2.Controls.Clear();
+            this.tabPage2.Controls.Add(P1);
+            P1.Show();
+            bunifuPages1.SetPage("PeoplePg");
         }
 
         private void VacPanel_Paint(object sender, PaintEventArgs e)
@@ -193,11 +199,18 @@ namespace VMS.Forms
 
         private void VCNowBTN_Click(object sender, EventArgs e)
         {
+            
             Forms.VCNow VCN = new Forms.VCNow() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             VCN.FormBorderStyle = FormBorderStyle.None;
             this.tabPage1.Controls.Clear();
             this.tabPage1.Controls.Add(VCN);
             VCN.Show();
+            
+            
+            
+
+
+
         }
 
         private void StaffBTNClick(object sender, EventArgs e)
