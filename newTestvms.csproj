@@ -125,6 +125,24 @@
     <Compile Include="Centers.designer.cs">
       <DependentUpon>Centers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Centers\addCenterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Centers\addCenterControl.Designer.cs">
+      <DependentUpon>addCenterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Centers\CCConDash.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Centers\CCConDash.Designer.cs">
+      <DependentUpon>CCConDash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Centers\VIewCentersCon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Centers\VIewCentersCon.Designer.cs">
+      <DependentUpon>VIewCentersCon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,11 +217,29 @@
     <Compile Include="Vaccination.designer.cs">
       <DependentUpon>Vaccination.cs</DependentUpon>
     </Compile>
+    <Compile Include="VaccinationF\VCNowCon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VaccinationF\VCNowCon.Designer.cs">
+      <DependentUpon>VCNowCon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VaccinationF\ViewListCon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VaccinationF\ViewListCon.Designer.cs">
+      <DependentUpon>ViewListCon.cs</DependentUpon>
+    </Compile>
     <Compile Include="VaccineStock.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VaccineStock.designer.cs">
       <DependentUpon>VaccineStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VacDash.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VacDash.Designer.cs">
+      <DependentUpon>VacDash.cs</DependentUpon>
     </Compile>
     <Compile Include="VCNow.cs">
       <SubType>Form</SubType>
@@ -219,6 +255,15 @@
     </Compile>
     <EmbeddedResource Include="Centers.resx">
       <DependentUpon>Centers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Centers\addCenterControl.resx">
+      <DependentUpon>addCenterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Centers\CCConDash.resx">
+      <DependentUpon>CCConDash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Centers\VIewCentersCon.resx">
+      <DependentUpon>VIewCentersCon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -266,8 +311,17 @@
     <EmbeddedResource Include="Vaccination.resx">
       <DependentUpon>Vaccination.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VaccinationF\VCNowCon.resx">
+      <DependentUpon>VCNowCon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VaccinationF\ViewListCon.resx">
+      <DependentUpon>ViewListCon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VaccineStock.resx">
       <DependentUpon>VaccineStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VacDash.resx">
+      <DependentUpon>VacDash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VCNow.resx">
       <DependentUpon>VCNow.cs</DependentUpon>
@@ -307,5 +361,6 @@
   <ItemGroup>
     <None Include="Resources\wp4465114.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
