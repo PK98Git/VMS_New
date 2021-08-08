@@ -29,33 +29,34 @@ namespace newTestvms.Stocks
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockDashCon));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             this.VacccineStockBTN = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.MedEqStockBTN = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.StockViewPanel = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.vMSDataSet = new newTestvms.VMSDataSet();
+            this.vacstocksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vacstocksTableAdapter = new newTestvms.VMSDataSetTableAdapters.vacstocksTableAdapter();
+            this.vidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dosageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lotnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vcapacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vissuedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vavailabilityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StockViewPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vMSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vacstocksBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox1.Location = new System.Drawing.Point(315, 113);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(297, 139);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Text = "\r\nTotal Vaccines   - 2 700 235\r\n\r\nAvialbility           - 1 200 000\r\n\r\nStoke Capa" +
-    "city  - 3 000 000\r\n\r\nIssued Vaccines - 2 678 500\r\n ";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // VacccineStockBTN
             // 
@@ -71,11 +72,11 @@ namespace newTestvms.Stocks
             this.VacccineStockBTN.ColorContrastOnClick = 45;
             this.VacccineStockBTN.ColorContrastOnHover = 45;
             this.VacccineStockBTN.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.VacccineStockBTN.CustomizableEdges = borderEdges1;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.VacccineStockBTN.CustomizableEdges = borderEdges3;
             this.VacccineStockBTN.DialogResult = System.Windows.Forms.DialogResult.None;
             this.VacccineStockBTN.DisabledBorderColor = System.Drawing.Color.Empty;
             this.VacccineStockBTN.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -94,26 +95,26 @@ namespace newTestvms.Stocks
             this.VacccineStockBTN.IdleIconLeftImage = null;
             this.VacccineStockBTN.IdleIconRightImage = null;
             this.VacccineStockBTN.IndicateFocus = false;
-            this.VacccineStockBTN.Location = new System.Drawing.Point(662, 45);
+            this.VacccineStockBTN.Location = new System.Drawing.Point(219, 3);
             this.VacccineStockBTN.Name = "VacccineStockBTN";
-            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties1.BorderRadius = 3;
-            stateProperties1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties1.BorderThickness = 1;
-            stateProperties1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties1.ForeColor = System.Drawing.Color.White;
-            stateProperties1.IconLeftImage = null;
-            stateProperties1.IconRightImage = null;
-            this.VacccineStockBTN.onHoverState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties2.BorderRadius = 3;
-            stateProperties2.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties2.BorderThickness = 1;
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties2.ForeColor = System.Drawing.Color.White;
-            stateProperties2.IconLeftImage = null;
-            stateProperties2.IconRightImage = null;
-            this.VacccineStockBTN.OnPressedState = stateProperties2;
+            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties5.BorderRadius = 3;
+            stateProperties5.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties5.BorderThickness = 1;
+            stateProperties5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties5.ForeColor = System.Drawing.Color.White;
+            stateProperties5.IconLeftImage = null;
+            stateProperties5.IconRightImage = null;
+            this.VacccineStockBTN.onHoverState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties6.BorderRadius = 3;
+            stateProperties6.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties6.BorderThickness = 1;
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties6.ForeColor = System.Drawing.Color.White;
+            stateProperties6.IconLeftImage = null;
+            stateProperties6.IconRightImage = null;
+            this.VacccineStockBTN.OnPressedState = stateProperties6;
             this.VacccineStockBTN.Size = new System.Drawing.Size(210, 45);
             this.VacccineStockBTN.TabIndex = 10;
             this.VacccineStockBTN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -134,11 +135,11 @@ namespace newTestvms.Stocks
             this.MedEqStockBTN.ColorContrastOnClick = 45;
             this.MedEqStockBTN.ColorContrastOnHover = 45;
             this.MedEqStockBTN.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.MedEqStockBTN.CustomizableEdges = borderEdges2;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.MedEqStockBTN.CustomizableEdges = borderEdges4;
             this.MedEqStockBTN.DialogResult = System.Windows.Forms.DialogResult.None;
             this.MedEqStockBTN.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.MedEqStockBTN.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -157,26 +158,26 @@ namespace newTestvms.Stocks
             this.MedEqStockBTN.IdleIconLeftImage = null;
             this.MedEqStockBTN.IdleIconRightImage = null;
             this.MedEqStockBTN.IndicateFocus = false;
-            this.MedEqStockBTN.Location = new System.Drawing.Point(72, 45);
+            this.MedEqStockBTN.Location = new System.Drawing.Point(3, 3);
             this.MedEqStockBTN.Name = "MedEqStockBTN";
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.BorderRadius = 3;
-            stateProperties3.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties3.BorderThickness = 1;
-            stateProperties3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.ForeColor = System.Drawing.Color.White;
-            stateProperties3.IconLeftImage = null;
-            stateProperties3.IconRightImage = null;
-            this.MedEqStockBTN.onHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties4.BorderRadius = 3;
-            stateProperties4.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties4.BorderThickness = 1;
-            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties4.ForeColor = System.Drawing.Color.White;
-            stateProperties4.IconLeftImage = null;
-            stateProperties4.IconRightImage = null;
-            this.MedEqStockBTN.OnPressedState = stateProperties4;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.BorderRadius = 3;
+            stateProperties7.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties7.BorderThickness = 1;
+            stateProperties7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.ForeColor = System.Drawing.Color.White;
+            stateProperties7.IconLeftImage = null;
+            stateProperties7.IconRightImage = null;
+            this.MedEqStockBTN.onHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties8.BorderRadius = 3;
+            stateProperties8.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties8.BorderThickness = 1;
+            stateProperties8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties8.ForeColor = System.Drawing.Color.White;
+            stateProperties8.IconLeftImage = null;
+            stateProperties8.IconRightImage = null;
+            this.MedEqStockBTN.OnPressedState = stateProperties8;
             this.MedEqStockBTN.Size = new System.Drawing.Size(210, 45);
             this.MedEqStockBTN.TabIndex = 9;
             this.MedEqStockBTN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -185,11 +186,92 @@ namespace newTestvms.Stocks
             // 
             // StockViewPanel
             // 
-            this.StockViewPanel.Controls.Add(this.textBox1);
-            this.StockViewPanel.Location = new System.Drawing.Point(3, 147);
+            this.StockViewPanel.Controls.Add(this.dataGridView1);
+            this.StockViewPanel.Location = new System.Drawing.Point(3, 54);
             this.StockViewPanel.Name = "StockViewPanel";
-            this.StockViewPanel.Size = new System.Drawing.Size(914, 446);
+            this.StockViewPanel.Size = new System.Drawing.Size(914, 539);
             this.StockViewPanel.TabIndex = 11;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.vidDataGridViewTextBoxColumn,
+            this.vnameDataGridViewTextBoxColumn,
+            this.brandDataGridViewTextBoxColumn,
+            this.dosageDataGridViewTextBoxColumn,
+            this.lotnumberDataGridViewTextBoxColumn,
+            this.vcapacityDataGridViewTextBoxColumn,
+            this.vissuedDataGridViewTextBoxColumn,
+            this.vavailabilityDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.vacstocksBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(173, 320);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // vMSDataSet
+            // 
+            this.vMSDataSet.DataSetName = "VMSDataSet";
+            this.vMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vacstocksBindingSource
+            // 
+            this.vacstocksBindingSource.DataMember = "vacstocks";
+            this.vacstocksBindingSource.DataSource = this.vMSDataSet;
+            // 
+            // vacstocksTableAdapter
+            // 
+            this.vacstocksTableAdapter.ClearBeforeFill = true;
+            // 
+            // vidDataGridViewTextBoxColumn
+            // 
+            this.vidDataGridViewTextBoxColumn.DataPropertyName = "v_id";
+            this.vidDataGridViewTextBoxColumn.HeaderText = "v_id";
+            this.vidDataGridViewTextBoxColumn.Name = "vidDataGridViewTextBoxColumn";
+            // 
+            // vnameDataGridViewTextBoxColumn
+            // 
+            this.vnameDataGridViewTextBoxColumn.DataPropertyName = "v_name";
+            this.vnameDataGridViewTextBoxColumn.HeaderText = "v_name";
+            this.vnameDataGridViewTextBoxColumn.Name = "vnameDataGridViewTextBoxColumn";
+            // 
+            // brandDataGridViewTextBoxColumn
+            // 
+            this.brandDataGridViewTextBoxColumn.DataPropertyName = "brand";
+            this.brandDataGridViewTextBoxColumn.HeaderText = "brand";
+            this.brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
+            // 
+            // dosageDataGridViewTextBoxColumn
+            // 
+            this.dosageDataGridViewTextBoxColumn.DataPropertyName = "dosage";
+            this.dosageDataGridViewTextBoxColumn.HeaderText = "dosage";
+            this.dosageDataGridViewTextBoxColumn.Name = "dosageDataGridViewTextBoxColumn";
+            // 
+            // lotnumberDataGridViewTextBoxColumn
+            // 
+            this.lotnumberDataGridViewTextBoxColumn.DataPropertyName = "lot_number";
+            this.lotnumberDataGridViewTextBoxColumn.HeaderText = "lot_number";
+            this.lotnumberDataGridViewTextBoxColumn.Name = "lotnumberDataGridViewTextBoxColumn";
+            // 
+            // vcapacityDataGridViewTextBoxColumn
+            // 
+            this.vcapacityDataGridViewTextBoxColumn.DataPropertyName = "v_capacity";
+            this.vcapacityDataGridViewTextBoxColumn.HeaderText = "v_capacity";
+            this.vcapacityDataGridViewTextBoxColumn.Name = "vcapacityDataGridViewTextBoxColumn";
+            // 
+            // vissuedDataGridViewTextBoxColumn
+            // 
+            this.vissuedDataGridViewTextBoxColumn.DataPropertyName = "v_issued";
+            this.vissuedDataGridViewTextBoxColumn.HeaderText = "v_issued";
+            this.vissuedDataGridViewTextBoxColumn.Name = "vissuedDataGridViewTextBoxColumn";
+            // 
+            // vavailabilityDataGridViewTextBoxColumn
+            // 
+            this.vavailabilityDataGridViewTextBoxColumn.DataPropertyName = "v_availability";
+            this.vavailabilityDataGridViewTextBoxColumn.HeaderText = "v_availability";
+            this.vavailabilityDataGridViewTextBoxColumn.Name = "vavailabilityDataGridViewTextBoxColumn";
             // 
             // StockDashCon
             // 
@@ -201,16 +283,28 @@ namespace newTestvms.Stocks
             this.Name = "StockDashCon";
             this.Size = new System.Drawing.Size(920, 596);
             this.StockViewPanel.ResumeLayout(false);
-            this.StockViewPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vMSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vacstocksBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton MedEqStockBTN;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton VacccineStockBTN;
         private System.Windows.Forms.Panel StockViewPanel;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brandDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dosageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lotnumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vcapacityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vissuedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vavailabilityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource vacstocksBindingSource;
+        private VMSDataSet vMSDataSet;
+        private VMSDataSetTableAdapters.vacstocksTableAdapter vacstocksTableAdapter;
     }
 }
