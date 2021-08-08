@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        newTestvms.dbconnection db = new newTestvms.dbconnection();
+
         public Form1()
         {
             InitializeComponent();
@@ -20,7 +23,34 @@ namespace WindowsFormsApp1
 
            
         }
-        
+
+        private bool checkEmpty()
+        {
+            if (textBox6.Text == "" || textBox1.Text == "" || maskedTextBox1.Text == "" || textBox4.Text == "" || richTextBox1.Text == "" || comboBox1.Text == "" || comboBox2.Text == "" || comboBox3.Text == "")
+            {
+                return true;
+
+            }
+            return false;
+
+        }
+
+        private void resetData()
+        {
+            textBox6.Text = "";
+            textBox1.Text = "";
+            bunifuDatepicker1.Value = DateTime.Today;
+            radioButton1.Checked = true;
+            radioButton2.Checked = false;
+            maskedTextBox1.Text = "";
+            textBox4.Text = "";
+            richTextBox1.Text = "";
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
+            comboBox3.SelectedIndex = 0;
+
+        }
+
         static Regex validate_emailaddress = email_validation();
         private static Regex email_validation()
         {
@@ -41,7 +71,7 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.DataSource = db.ShowDataInGridView("select * from people");
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -51,14 +81,67 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (validate_emailaddress.IsMatch(textBox4.Text) != true)
-            {
-                MessageBox.Show("Invalid Email Address!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                textBox4.Focus();
-                textBox4.Clear();
+            
 
-                return;
+            if (checkEmpty() == false)
+            {
+                if (validate_emailaddress.IsMatch(textBox4.Text) != true)
+                {
+                    MessageBox.Show("Invalid Email Address!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    textBox4.Focus();
+                    textBox4.Clear();
+
+                    return;
+                }
+
+                string gender;
+                if (radioButton1.Checked)
+                {
+                    gender = "Male";
+                }
+                else
+                {
+                    gender = "Female";
+                }
+
+                try
+                {
+
+                    SqlCommand cmd = db.ExecuteQueries("Insert into people(nic, name, dob, gender, phoneno, email, address, province, district, ds)  values(@nic, @name, @dob, @gender, @phoneno, @email, @address, @province, @district, @ds)");
+
+                   
+                    cmd.Parameters.AddWithValue("@nic", textBox6.Text.ToString());
+                    cmd.Parameters.AddWithValue("@name", textBox1.Text.ToString());
+                    cmd.Parameters.AddWithValue("@dob", bunifuDatepicker1.Value.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@gender", gender);
+                    cmd.Parameters.AddWithValue("@phoneno", maskedTextBox1.Text.ToString());
+                    cmd.Parameters.AddWithValue("@email", textBox4.Text.ToString());
+
+                    cmd.Parameters.AddWithValue("@address", richTextBox1.Text.ToString());
+                    cmd.Parameters.AddWithValue("@province", comboBox1.Text.ToString());
+                    cmd.Parameters.AddWithValue("@district", comboBox2.Text.ToString());
+                    cmd.Parameters.AddWithValue("@ds", comboBox3.Text.ToString());
+
+
+                    cmd.ExecuteNonQuery();
+                    db.CloseConnection();
+                    MessageBox.Show("Added Sucessfully", "SAVED!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataGridView1.DataSource = db.ShowDataInGridView("select * from people");
+                    resetData();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    MessageBox.Show("Error");
+                }
             }
+            else
+            {
+                MessageBox.Show("Please Provide Details!");
+            }
+
+
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -175,7 +258,7 @@ namespace WindowsFormsApp1
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            dateTimePicker1.MaxDate = DateTime.Now.Date;
+            
         }
 
         private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -190,7 +273,7 @@ namespace WindowsFormsApp1
 
         private void maskedTextBox2_MouseClick(object sender, MouseEventArgs e)
         {
-            maskedTextBox2.Select(0, 0);
+            
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -210,6 +293,139 @@ namespace WindowsFormsApp1
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (textBox6.Text != "")
+            {
+
+                try
+                {
+
+                    SqlCommand cmd = db.ExecuteQueries("delete people where nic=@nic");
+
+                    cmd.Parameters.AddWithValue("@nic", textBox6.Text.ToString());
+
+
+                    DialogResult result = MessageBox.Show("Are you sure you Delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Deleted Sucessfully", "DELETED!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    db.CloseConnection();
+                    dataGridView1.DataSource = db.ShowDataInGridView("select * from people");
+                    resetData();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    MessageBox.Show("Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select the record to be deleted from the table", "MESSAGE!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (checkEmpty() == false)
+            {
+
+                if (validate_emailaddress.IsMatch(textBox4.Text) != true)
+                {
+                    MessageBox.Show("Invalid Email Address!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    textBox4.Focus();
+                    textBox4.Clear();
+
+                    return;
+                }
+
+                string gender;
+                if (radioButton1.Checked)
+                {
+                    gender = "Male";
+                }
+                else
+                {
+                    gender = "Female";
+                }
+
+                try
+                {
+
+                    SqlCommand cmd = db.ExecuteQueries("update people set nic=@nic, name=@name, dob=@dob, gender=@gender, phoneno=@phoneno, email=@email, address=@address, province=@province, district=@district, ds=@ds   where nic=@nic");
+
+                    cmd.Parameters.AddWithValue("@nic", textBox6.Text.ToString());
+                    cmd.Parameters.AddWithValue("@name", textBox1.Text.ToString());
+                    cmd.Parameters.AddWithValue("@dob", bunifuDatepicker1.Value.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@gender", gender);
+                    cmd.Parameters.AddWithValue("@phoneno", maskedTextBox1.Text.ToString());
+                    cmd.Parameters.AddWithValue("@email", textBox4.Text.ToString());
+
+                    cmd.Parameters.AddWithValue("@address", richTextBox1.Text.ToString());
+                    cmd.Parameters.AddWithValue("@province", comboBox1.Text.ToString());
+                    cmd.Parameters.AddWithValue("@district", comboBox2.Text.ToString());
+                    cmd.Parameters.AddWithValue("@ds", comboBox3.Text.ToString());
+
+                    cmd.ExecuteNonQuery();
+                    db.CloseConnection();
+                    MessageBox.Show("Updated Sucessfully", "SAVED!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataGridView1.DataSource = db.ShowDataInGridView("select * from people");
+                    resetData();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    MessageBox.Show("Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Provide Details!");
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            textBox6.Text = dataGridView1.CurrentRow.Cells["nic"].Value.ToString();
+            textBox1.Text = dataGridView1.CurrentRow.Cells["name"].Value.ToString();
+            bunifuDatepicker1.Text = dataGridView1.CurrentRow.Cells["dob"].Value.ToString();
+            if (dataGridView1.CurrentRow.Cells["gender"].Value.ToString() == "Male")
+            {
+                radioButton1.Checked = true;
+                radioButton2.Checked = false;
+
+            }
+            else
+            {
+                radioButton2.Checked = true;
+                radioButton1.Checked = false;
+            }
+            maskedTextBox1.Text = dataGridView1.CurrentRow.Cells["phoneno"].Value.ToString();
+
+            textBox4.Text = dataGridView1.CurrentRow.Cells["email"].Value.ToString();
+            richTextBox1.Text = dataGridView1.CurrentRow.Cells["address"].Value.ToString();
+
+
+            comboBox1.Text = dataGridView1.CurrentRow.Cells["province"].Value.ToString();
+            comboBox2.Text = dataGridView1.CurrentRow.Cells["district"].Value.ToString();
+            comboBox3.Text = dataGridView1.CurrentRow.Cells["ds"].Value.ToString();
+
+
+
 
         }
     }
