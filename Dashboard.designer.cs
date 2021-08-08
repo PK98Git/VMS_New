@@ -130,8 +130,11 @@ namespace VMS.Forms
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.bunifuGradientPanel3 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.VcNextBTN = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
@@ -176,9 +179,6 @@ namespace VMS.Forms
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -914,6 +914,18 @@ namespace VMS.Forms
             this.bunifuGradientPanel3.Size = new System.Drawing.Size(200, 100);
             this.bunifuGradientPanel3.TabIndex = 10;
             // 
+            // bunifuCustomLabel4
+            // 
+            this.bunifuCustomLabel4.AutoSize = true;
+            this.bunifuCustomLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(3, 3);
+            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(141, 21);
+            this.bunifuCustomLabel4.TabIndex = 13;
+            this.bunifuCustomLabel4.Text = "Vaccination Rate";
+            // 
             // bunifuGradientPanel1
             // 
             this.bunifuGradientPanel1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -931,6 +943,18 @@ namespace VMS.Forms
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(181, 100);
             this.bunifuGradientPanel1.TabIndex = 8;
             // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(7, 3);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(139, 21);
+            this.bunifuCustomLabel2.TabIndex = 11;
+            this.bunifuCustomLabel2.Text = "Total Vaccinated";
+            // 
             // bunifuGradientPanel2
             // 
             this.bunifuGradientPanel2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -947,6 +971,19 @@ namespace VMS.Forms
             this.bunifuGradientPanel2.Quality = 20;
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(200, 100);
             this.bunifuGradientPanel2.TabIndex = 9;
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(3, 3);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(143, 21);
+            this.bunifuCustomLabel3.TabIndex = 12;
+            this.bunifuCustomLabel3.Text = "To be Vaccinated";
+            this.bunifuCustomLabel3.Click += new System.EventHandler(this.bunifuCustomLabel3_Click);
             // 
             // VcNextBTN
             // 
@@ -1924,10 +1961,10 @@ namespace VMS.Forms
             this.bunifuPages1.Location = new System.Drawing.Point(266, 46);
             this.bunifuPages1.Multiline = true;
             this.bunifuPages1.Name = "bunifuPages1";
-            this.bunifuPages1.Page = this.tabPage4;
-            this.bunifuPages1.PageIndex = 6;
-            this.bunifuPages1.PageName = "tabPage4";
-            this.bunifuPages1.PageTitle = "DashboardPg";
+            this.bunifuPages1.Page = this.tabPage7;
+            this.bunifuPages1.PageIndex = 3;
+            this.bunifuPages1.PageName = "tabPage7";
+            this.bunifuPages1.PageTitle = "StocksPg";
             this.bunifuPages1.SelectedIndex = 0;
             this.bunifuPages1.Size = new System.Drawing.Size(1080, 705);
             this.bunifuPages1.TabIndex = 2;
@@ -2484,43 +2521,6 @@ namespace VMS.Forms
             // 
             this.bunifuElipse4.ElipseRadius = 15;
             this.bunifuElipse4.TargetControl = this.bunifuGradientPanel3;
-            // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(3, 0);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(131, 21);
-            this.bunifuCustomLabel2.TabIndex = 11;
-            this.bunifuCustomLabel2.Text = "Total Vaccinated";
-            // 
-            // bunifuCustomLabel3
-            // 
-            this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(3, 0);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(135, 21);
-            this.bunifuCustomLabel3.TabIndex = 12;
-            this.bunifuCustomLabel3.Text = "To be Vaccinated";
-            this.bunifuCustomLabel3.Click += new System.EventHandler(this.bunifuCustomLabel3_Click);
-            // 
-            // bunifuCustomLabel4
-            // 
-            this.bunifuCustomLabel4.AutoSize = true;
-            this.bunifuCustomLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(3, 0);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(134, 21);
-            this.bunifuCustomLabel4.TabIndex = 13;
-            this.bunifuCustomLabel4.Text = "Vaccination Rate";
             // 
             // Dashboard
             // 

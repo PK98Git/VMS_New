@@ -32,10 +32,10 @@ namespace newTestvms
 
         public object ShowDataInGridView( string query)
         {
-            //con.Open();
+            con.Open();
             SqlDataAdapter adapt = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
-            //adapt.Fill(dt);
+            adapt.Fill(dt);
             //grid.DataSource = dt;
             //object dataum = dt.Tables[0];
             return dt;
