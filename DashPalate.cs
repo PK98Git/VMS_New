@@ -17,16 +17,6 @@ namespace VMS.Forms
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DashPalate_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click_1(object sender, EventArgs e)
         {
 
@@ -34,7 +24,13 @@ namespace VMS.Forms
 
         private void VcNextBTN_Click(object sender, EventArgs e)
         {
-
+            
         }
+
+        private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+             
+        }
+        
     }
 }
