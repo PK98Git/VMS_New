@@ -12,38 +12,12 @@ namespace VMS.Forms
             this.FormBorderStyle = FormBorderStyle.None;
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void MoveSidePanel(Control c)
         {
-
+            SidePanel.Height = c.Height;
+            SidePanel.Top = c.Top;
         }
 
-        private void bunifuTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void bunifuButton1_Click(object sender, EventArgs e)
-        {
-            DashPalate DP1 = new DashPalate() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            DP1.FormBorderStyle = FormBorderStyle.None;
-            this.tabPage4.Controls.Clear();
-            this.tabPage4.Controls.Add(DP1);
-            DP1.Show();    
-            bunifuPages1.SetPage("DashboardPg");
-        }
-
-
-        private void Chart1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void bunifuButton5_Click_1(object sender, EventArgs e)
         {
@@ -67,10 +41,7 @@ namespace VMS.Forms
             //VC1.Show();
             //tabPage1.BringToFront();
             //this.tabPage1.Controls.Clear();
-            this.tabPage4.Controls.Remove(tabPage4);
             
-            bunifuPages1.SetPage("VaccinationPg");
-
 
         }
 
@@ -83,7 +54,7 @@ namespace VMS.Forms
             this.tabPage5.Controls.Add(C1);
             C1.Show();
             */
-            bunifuPages1.SetPage("CentersPg");
+            
         }
 
         private void ScheduleBTN_Click(object sender, EventArgs e)
@@ -96,6 +67,7 @@ namespace VMS.Forms
             Sche1.Show();
             */
             bunifuPages1.SetPage("SchedulePg");
+            MoveSidePanel(ScheduleBTN);
             
         }
 
@@ -116,6 +88,7 @@ namespace VMS.Forms
             this.tabPage2.Controls.Add(P1);
             P1.Show();
             bunifuPages1.SetPage("PeoplePg");
+            MoveSidePanel(PeopleBTN);
         }
 
         private void VacPanel_Paint(object sender, PaintEventArgs e)
@@ -125,13 +98,19 @@ namespace VMS.Forms
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-
+            /*
             DashPalate DP1 = new DashPalate() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             DP1.FormBorderStyle = FormBorderStyle.None;
             this.tabPage4.Controls.Clear();
             this.tabPage4.Controls.Add(DP1);
             DP1.Show();
             bunifuPages1.SetPage("DashboardPg");
+            */
+
+            
+            bunifuPages1.SetPage("DashboardPg");
+            MoveSidePanel(DashBTN);
+
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -150,16 +129,6 @@ namespace VMS.Forms
             //tabPage4.Show();
             
             }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
@@ -186,18 +155,9 @@ namespace VMS.Forms
 
         private void VCNowBTN_Click(object sender, EventArgs e)
         {
-            /*
-            Forms.VCNow VCN = new Forms.VCNow() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            VCN.FormBorderStyle = FormBorderStyle.None;
-            this.tabPage1.Controls.Clear();
-            this.tabPage1.Controls.Add(VCN);
-            VCN.Show();
-            */
+
             newTestvms.Vaccination.VCNowCon VcnCOn = new newTestvms.Vaccination.VCNowCon() { Dock = DockStyle.Fill,  };
             addPanelC(VcnCOn);
-            
-
-
 
         }
 
@@ -209,6 +169,7 @@ namespace VMS.Forms
             this.tabPage3.Controls.Add(ST1);
             ST1.Show();
             bunifuPages1.SetPage("StaffPg");
+            MoveSidePanel(StaffBTN);
         }
         private void addPanelC(UserControl uc)
         {
@@ -240,6 +201,38 @@ namespace VMS.Forms
         {
             newTestvms.Centers.addCenterControl AddnewCenterC1 = new newTestvms.Centers.addCenterControl();
             addPanelCenter(AddnewCenterC1);
+        }
+
+        private void DashBTN_Click(object sender, EventArgs e)
+        {
+            //this.tabPage4.Controls.Clear();
+            bunifuPages1.SetPage("DashboardPg");
+            MoveSidePanel(DashBTN);
+
+        }
+
+        private void VaccinationBTNClick(object sender, EventArgs e)
+        {
+            this.tabPage4.Controls.Remove(tabPage4);
+            bunifuPages1.SetPage("VaccinationPg");
+            MoveSidePanel(VaccinationBTN);
+        }
+
+        private void StocksBTN_Click_1(object sender, EventArgs e)
+        {
+            bunifuPages1.SetPage("StocksPg");
+            MoveSidePanel(StocksBTN);
+        }
+
+        private void CenterBTN_Click(object sender, EventArgs e)
+        {
+            bunifuPages1.SetPage("CentersPg");
+            MoveSidePanel(CenterBTN);
+        }
+
+        private void bunifuCustomLabel3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
