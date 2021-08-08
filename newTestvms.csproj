@@ -287,6 +287,11 @@
     <Compile Include="VCNowControl1.Designer.cs">
       <DependentUpon>VCNowControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="VMSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VMSDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Centers.resx">
       <DependentUpon>Centers.cs</DependentUpon>
     </EmbeddedResource>
@@ -384,6 +389,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="VMSDataSet.xsc">
+      <DependentUpon>VMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VMSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VMSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VMSDataSet.xss">
+      <DependentUpon>VMSDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
