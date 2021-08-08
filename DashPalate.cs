@@ -24,7 +24,13 @@ namespace VMS.Forms
 
         private void VcNextBTN_Click(object sender, EventArgs e)
         {
-
+            
         }
+
+        private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+             
+        }
+        
     }
 }

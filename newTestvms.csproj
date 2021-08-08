@@ -37,7 +37,7 @@
       <HintPath>..\bunifu\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu UI WinForms 1.11.5.1\Bunifu.Core.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
-      <HintPath>..\bunifu\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+      <HintPath>..\..\..\Desktop\E\Uni\UOK\Y2S1\INTE 21223 - Interactive Application Development (20192020)\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
       <HintPath>..\bunifu\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
@@ -65,6 +65,9 @@
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
       <HintPath>..\bunifu\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
+      <HintPath>..\..\..\Downloads\bunifu.ui.winforms.5.0.9 (1)\lib\net40\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
       <HintPath>..\bunifu\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
@@ -230,6 +233,18 @@
     <Compile Include="StocksDash.designer.cs">
       <DependentUpon>StocksDash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stocks\MedicalEqCon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stocks\MedicalEqCon.Designer.cs">
+      <DependentUpon>MedicalEqCon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stocks\StockDashCon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stocks\StockDashCon.Designer.cs">
+      <DependentUpon>StockDashCon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vaccination.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -332,6 +347,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StocksDash.resx">
       <DependentUpon>StocksDash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stocks\MedicalEqCon.resx">
+      <DependentUpon>MedicalEqCon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stocks\StockDashCon.resx">
+      <DependentUpon>StockDashCon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vaccination.resx">
       <DependentUpon>Vaccination.cs</DependentUpon>
