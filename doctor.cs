@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace VMS
 {
@@ -19,6 +20,15 @@ namespace VMS
         public doctor()
         {
             InitializeComponent();
+        }
+
+        static Regex validate_emailaddress = email_validation();
+        private static Regex email_validation()
+        {
+            string pattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
+            + @"([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)"
+            + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
+            return new Regex(pattern, RegexOptions.IgnoreCase);
         }
 
         private void bunifuButton6_Click(object sender, EventArgs e)
@@ -67,6 +77,15 @@ namespace VMS
             
             if (checkEmpty() == false)
             {
+
+                if (validate_emailaddress.IsMatch(bunifuCustomTextbox5.Text) != true)
+                {
+                    MessageBox.Show("Invalid Email Address!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    bunifuCustomTextbox5.Focus();
+                    bunifuCustomTextbox5.Clear();
+
+                    return;
+                }
 
                 string gender;
                 if (bunifuRadioButton1.Checked)
@@ -127,6 +146,8 @@ namespace VMS
         private void doctor_Load(object sender, EventArgs e)
         {
             bunifuDataGridView1.DataSource = db.ShowDataInGridView("select * from doctor");
+            db.CloseConnection();
+
         }
 
         private void bunifuButton5_Click(object sender, EventArgs e)
@@ -135,6 +156,16 @@ namespace VMS
 
             if (checkEmpty() == false)
             {
+
+                if (validate_emailaddress.IsMatch(bunifuCustomTextbox5.Text) != true)
+                {
+                    MessageBox.Show("Invalid Email Address!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    bunifuCustomTextbox5.Focus();
+                    bunifuCustomTextbox5.Clear();
+
+                    return;
+                }
+
                 string gender;
                 if (bunifuRadioButton1.Checked)
                 {
@@ -223,14 +254,16 @@ namespace VMS
                     SqlCommand cmd = db.ExecuteQueries("delete doctor where d_id=@d_id");
 
                     cmd.Parameters.AddWithValue("@d_id", maskedTextBox1.Text.ToString());
-                    cmd.ExecuteNonQuery();
-                    db.CloseConnection();
+                    
+                    
 
                     DialogResult result = MessageBox.Show("Are you sure you Delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
+                        cmd.ExecuteNonQuery();
                         MessageBox.Show("Deleted Sucessfully", "DELETED!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                    db.CloseConnection();
                     bunifuDataGridView1.DataSource = db.ShowDataInGridView("select * from doctor");
                     resetData();
                 }
@@ -242,13 +275,34 @@ namespace VMS
             }
             else
             {
-                MessageBox.Show("Selct the record to be deleted from the table", "MESSAGE!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Select the record to be deleted from the table", "MESSAGE!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
+            if (bunifuCustomTextbox7.Text == "")
+            {
+                MessageBox.Show("Please Enter the Doctor ID or NIC!");
+            }
+            else
+            {
+                string query = "select * from doctor where d_id='" + bunifuCustomTextbox7.Text + "' OR nic = '" + bunifuCustomTextbox7.Text + "'";
+                bunifuDataGridView1.DataSource = db.ShowDataInGridView(query);
+                db.CloseConnection();
+            }
+            
+        }
 
+        private void bunifuCustomTextbox7_TextChanged(object sender, EventArgs e)
+        {
+            //con.Open();
+            //string query = "SELECT  d_id, slmc_no, f_name, l_name, qualification, address, gender, nic, dob, phoneno, email  FROM doctor where d_id LIKE \"%{bunifuCustomTextbox7.Text}%\" OR slmc_no LIKE \"%{bunifuCustomTextbox7.Text}%\" OR f_name LIKE \"%{bunifuCustomTextbox7.Text}%\" OR l_name LIKE \"%{bunifuCustomTextbox7.Text}%\" OR qualification LIKE \"%{bunifuCustomTextbox7.Text}%\" OR address LIKE \"%{bunifuCustomTextbox7.Text}%\" OR gender LIKE \"%{bunifuCustomTextbox7.Text}%\" OR nic LIKE \"%{bunifuCustomTextbox7.Text}%\" OR dob LIKE \"%{bunifuCustomTextbox7.Text}%\" OR phoneno LIKE \"%{bunifuCustomTextbox7.Text}%\" OR email LIKE \"%{bunifuCustomTextbox7.Text}%\"";
+
+            //string query = "SELECT* FROM doctor WHERE d_id LIKE '%bunifuCustomTextbox7.Text%'";
+
+            /*bunifuDataGridView1.DataSource = db.ShowDataInGridView(query);
+            db.CloseConnection();*/
         }
     }
 }
