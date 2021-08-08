@@ -423,6 +423,32 @@
   <ItemGroup>
     <None Include="Resources\wp4465114.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\crowd_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\syringe_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard_layout_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nurse_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clinic_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\schedule_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_48px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
