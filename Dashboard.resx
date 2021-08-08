@@ -5062,11 +5062,9 @@
   </data>
   <data name="Exit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAC4AAAAkCAYAAAD2IghRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAChSURBVFhH7dixDQIxEERRN+I7SqECWrMRZRCTUgoNXEQD
-        a87oh45HtjQr/cSa4MVOS99e2mWv8dxqa1N3j1e3wk5pK/EeDicsl/jAPuGDwczBNlwWbMNlwTZcFmzD
-        ZcE2XBZsw2XBNlwWbMNlwTZcFmzDZcE2XBZsw2XBNlwWbMNlwV4Y3r9uR4MZyzW+sP8f+9fz4RgNZ6qj
-        8yNusFe8lH4kd5l2rJl8vgAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAADQAAAAsCAYAAAAq/ZsdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAgSURBVGhD7cEBDQAAAMKg909tDjcgAAAAAAAAAADgQA0j
+        7AABzEW9uQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="bunifuTextBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
