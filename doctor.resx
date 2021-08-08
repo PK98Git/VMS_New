@@ -242,4 +242,7 @@
         A8fvN8T5+PCeDVdoYJRbXuDw/S/iC/XohKWbiS1XAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="bunifuLabel15.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 1.2px; font-family: 'Microsoft Sans Serif'; font-size: 8.25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: Transparent; text-align: left; }</value>
+  </data>
 </root>
