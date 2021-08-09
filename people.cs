@@ -72,6 +72,7 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = db.ShowDataInGridView("select * from people");
+            db.CloseConnection();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -427,6 +428,20 @@ namespace WindowsFormsApp1
 
 
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (textBox8.Text == "")
+            {
+                MessageBox.Show("Please Enter the NIC!");
+            }
+            else
+            {
+                string query = "select * from people where nic = '" + textBox8.Text + "'";
+                dataGridView1.DataSource = db.ShowDataInGridView(query);
+                db.CloseConnection();
+            }
         }
     }
 }

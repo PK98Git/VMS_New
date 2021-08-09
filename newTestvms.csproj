@@ -37,7 +37,7 @@
       <HintPath>..\bunifu\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu UI WinForms 1.11.5.1\Bunifu.Core.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
-      <HintPath>..\..\..\Desktop\E\Uni\UOK\Y2S1\INTE 21223 - Interactive Application Development (20192020)\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+      <HintPath>..\bunifu\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
       <HintPath>..\bunifu\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
@@ -65,9 +65,6 @@
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
       <HintPath>..\bunifu\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
-      <HintPath>..\..\..\Downloads\bunifu.ui.winforms.5.0.9 (1)\lib\net40\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
       <HintPath>..\bunifu\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
@@ -275,6 +272,7 @@
     <Compile Include="VacDash.Designer.cs">
       <DependentUpon>VacDash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validation.cs" />
     <Compile Include="VCNow.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -94,6 +94,10 @@ namespace VMS
             this.bunifuButton2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuLabel15 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -124,6 +128,7 @@ namespace VMS
             this.bunifuCustomTextbox8.Name = "bunifuCustomTextbox8";
             this.bunifuCustomTextbox8.Size = new System.Drawing.Size(150, 20);
             this.bunifuCustomTextbox8.TabIndex = 136;
+            this.bunifuCustomTextbox8.TextChanged += new System.EventHandler(this.bunifuCustomTextbox8_TextChanged);
             // 
             // bunifuLabel14
             // 
@@ -139,6 +144,7 @@ namespace VMS
             this.bunifuLabel14.Text = "SLMC Reg No";
             this.bunifuLabel14.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel14.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel14.Click += new System.EventHandler(this.bunifuLabel14_Click);
             // 
             // bunifuLabel13
             // 
@@ -163,6 +169,7 @@ namespace VMS
             this.bunifuCustomTextbox6.Name = "bunifuCustomTextbox6";
             this.bunifuCustomTextbox6.Size = new System.Drawing.Size(150, 20);
             this.bunifuCustomTextbox6.TabIndex = 132;
+            this.bunifuCustomTextbox6.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bunifuCustomTextbox6_KeyUp);
             // 
             // bunifuLabel12
             // 
@@ -215,6 +222,8 @@ namespace VMS
             this.bunifuCustomTextbox3.Name = "bunifuCustomTextbox3";
             this.bunifuCustomTextbox3.Size = new System.Drawing.Size(150, 20);
             this.bunifuCustomTextbox3.TabIndex = 128;
+            this.bunifuCustomTextbox3.TextChanged += new System.EventHandler(this.bunifuCustomTextbox3_TextChanged);
+            this.bunifuCustomTextbox3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bunifuCustomTextbox3_KeyUp);
             // 
             // bunifuLabel9
             // 
@@ -290,6 +299,7 @@ namespace VMS
             this.bunifuCustomTextbox5.Name = "bunifuCustomTextbox5";
             this.bunifuCustomTextbox5.Size = new System.Drawing.Size(150, 20);
             this.bunifuCustomTextbox5.TabIndex = 121;
+            this.bunifuCustomTextbox5.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bunifuCustomTextbox5_KeyUp);
             // 
             // bunifuLabel8
             // 
@@ -393,6 +403,8 @@ namespace VMS
             this.bunifuCustomTextbox2.Name = "bunifuCustomTextbox2";
             this.bunifuCustomTextbox2.Size = new System.Drawing.Size(150, 20);
             this.bunifuCustomTextbox2.TabIndex = 113;
+            this.bunifuCustomTextbox2.TextChanged += new System.EventHandler(this.bunifuCustomTextbox2_TextChanged);
+            this.bunifuCustomTextbox2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.bunifuCustomTextbox2_KeyUp);
             // 
             // bunifuLabel3
             // 
@@ -908,11 +920,56 @@ namespace VMS
             this.bunifuLabel15.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel15.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(322, 221);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 141;
+            this.label1.Text = "Invalid";
+            this.label1.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(322, 179);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 142;
+            this.label2.Text = "Invalid";
+            this.label2.Visible = false;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(684, 154);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 143;
+            this.label3.Text = "Invalid";
+            this.label3.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(684, 301);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.TabIndex = 144;
+            this.label4.Text = "Invalid";
+            this.label4.Visible = false;
+            // 
             // doctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.bunifuLabel15);
             this.Controls.Add(this.bunifuDataGridView1);
             this.Controls.Add(this.maskedTextBox2);
@@ -1003,5 +1060,9 @@ namespace VMS
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneno;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel15;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

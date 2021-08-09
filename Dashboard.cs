@@ -1,11 +1,39 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 
 namespace VMS.Forms
 {
     public partial class Dashboard : System.Windows.Forms.Form
     {
+
+        newTestvms.dbconnection db = new newTestvms.dbconnection();
+
+        private bool checkEmpty()
+        {
+            if (bunifuTextBox7.Text == "" || bunifuTextBox6.Text == "" || bunifuTextBox5.Text == "")
+            {
+                return true;
+
+            }
+            return false;
+
+        }
+
+        private void resetData()
+        {
+            bunifuTextBox7.Text = "";
+            bunifuDropdown2.Text = "";
+            bunifuDropdown1.Text = "";
+            bunifuDropdown3.Text = "";
+            bunifuTextBox6.Text = "";
+            bunifuTextBox5.Text = "";
+          
+
+        }
+
+
         public Dashboard()
         {
             InitializeComponent();
@@ -183,10 +211,10 @@ namespace VMS.Forms
         private void addPanelCenter(UserControl uc)
         {
 
-            CenterPanel.Controls.Clear();
+            /*CenterPanel.Controls.Clear();
             uc.Dock = DockStyle.Fill;
             CenterPanel.Controls.Add(uc);
-            uc.BringToFront();
+            uc.BringToFront();*/
 
         }
 
@@ -199,8 +227,52 @@ namespace VMS.Forms
 
         private void AddNewCenterBTNClick(object sender, EventArgs e)
         {
-            newTestvms.Centers.addCenterControl AddnewCenterC1 = new newTestvms.Centers.addCenterControl();
-            addPanelCenter(AddnewCenterC1);
+            //newTestvms.Centers.addCenterControl AddnewCenterC1 = new newTestvms.Centers.addCenterControl();
+            //addPanelCenter(AddnewCenterC1);
+
+            if (checkEmpty() == false)
+            {
+
+             
+
+                try
+                {
+
+                    SqlCommand cmd = db.ExecuteQueries("Insert into centers(c_id, province, district, ds, num_of_residents, vaccination_capacity)  values(@c_id, @province, @district, @ds, @num_of_residents, @vaccination_capacity)");
+
+
+
+                    //cmd = new SqlCommand("Insert into doctor (d_id,slmc_no,f_name,l_name,qualification,address,gender,nic,dob,phoneno,email)  values(@d_id,@slmc_no,@f_name,@l_name,@qualification,@address,@gender,@nic,@dob,@phoneno,@email)", con);
+                    // con.Open();
+                    cmd.Parameters.AddWithValue("@c_id", bunifuTextBox7.Text.ToString());
+                    cmd.Parameters.AddWithValue("@province", bunifuDropdown2.Text.ToString());
+                    cmd.Parameters.AddWithValue("@district", bunifuDropdown1.Text.ToString());
+                    cmd.Parameters.AddWithValue("@ds", bunifuDropdown3.Text.ToString());
+                    cmd.Parameters.AddWithValue("@num_of_residents", bunifuTextBox6.Text.ToString());
+                    cmd.Parameters.AddWithValue("@vaccination_capacity", bunifuTextBox5.Text.ToString());
+                  
+
+
+                    cmd.ExecuteNonQuery();
+                    db.CloseConnection();
+                    MessageBox.Show("Added Sucessfully", "SAVED!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    bunifuDataGridView1.DataSource = db.ShowDataInGridView("select * from centers");
+                    resetData();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    MessageBox.Show("Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Provide Details!");
+            }
+           /* bunifuPages1.SetPage("CentersPg");
+            MoveSidePanel(CenterBTN);
+            bunifuDataGridView1.DataSource = db.ShowDataInGridView("select * from centers");
+            db.CloseConnection();*/
         }
 
         private void DashBTN_Click(object sender, EventArgs e)
@@ -228,11 +300,111 @@ namespace VMS.Forms
         {
             bunifuPages1.SetPage("CentersPg");
             MoveSidePanel(CenterBTN);
+            bunifuDataGridView1.DataSource = db.ShowDataInGridView("select * from centers");
+            db.CloseConnection();
         }
 
         private void bunifuCustomLabel3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+            //bunifuDataGridView1.DataSource = db.ShowDataInGridView("select * from centers");
+        }
+
+        private void bunifuDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            bunifuTextBox7.Text = bunifuDataGridView1.CurrentRow.Cells["c_id"].Value.ToString();
+            bunifuDropdown2.Text = bunifuDataGridView1.CurrentRow.Cells["province"].Value.ToString();
+            bunifuDropdown1.Text = bunifuDataGridView1.CurrentRow.Cells["district"].Value.ToString();
+            bunifuDropdown3.Text = bunifuDataGridView1.CurrentRow.Cells["ds"].Value.ToString();
+            bunifuTextBox6.Text = bunifuDataGridView1.CurrentRow.Cells["num_of_residents"].Value.ToString();
+            bunifuTextBox5.Text = bunifuDataGridView1.CurrentRow.Cells["vaccination_capacity"].Value.ToString();
+        }
+
+        private void bunifuButton6_Click_1(object sender, EventArgs e)
+        {
+            if (checkEmpty() == false)
+            {
+
+               
+                try
+                {
+
+                    SqlCommand cmd = db.ExecuteQueries("update centers set c_id=@c_id, province=@province, district=@district, ds=@ds, num_of_residence=@num_of_residence, vaccination_capacity=@vaccination_capacity where c_id=@c_id");
+
+
+
+                    //cmd = new SqlCommand("Insert into doctor (d_id,slmc_no,f_name,l_name,qualification,address,gender,nic,dob,phoneno,email)  values(@d_id,@slmc_no,@f_name,@l_name,@qualification,@address,@gender,@nic,@dob,@phoneno,@email)", con);
+                    // con.Open();
+                    cmd.Parameters.AddWithValue("@c_id", bunifuTextBox7.Text.ToString());
+                    cmd.Parameters.AddWithValue("@province", bunifuDropdown2.Text.ToString());
+                    cmd.Parameters.AddWithValue("@district", bunifuDropdown1.Text.ToString());
+                    cmd.Parameters.AddWithValue("@ds", bunifuDropdown3.Text.ToString());
+                    cmd.Parameters.AddWithValue("@num_of_residents", bunifuTextBox6.Text.ToString());
+                    cmd.Parameters.AddWithValue("@vaccination_capacity", bunifuTextBox5.Text.ToString());
+
+
+
+                    cmd.ExecuteNonQuery();
+                    db.CloseConnection();
+                    MessageBox.Show("Updated Sucessfully", "SAVED!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    bunifuDataGridView1.DataSource = db.ShowDataInGridView("select * from centers");
+                    resetData();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    MessageBox.Show("Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Provide Details!");
+            }
+        }
+
+        private void bunifuButton3_Click(object sender, EventArgs e)
+        {
+            if (bunifuTextBox7.Text != "")
+            {
+
+                try
+                {
+
+                    SqlCommand cmd = db.ExecuteQueries("delete centers where c_id=@c_id");
+
+                    cmd.Parameters.AddWithValue("@c_id", bunifuTextBox7.Text.ToString());
+
+
+
+                    DialogResult result = MessageBox.Show("Are you sure you Delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Deleted Sucessfully", "DELETED!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    db.CloseConnection();
+                    bunifuDataGridView1.DataSource = db.ShowDataInGridView("select * from centers");
+                    resetData();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    MessageBox.Show("Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select the record to be deleted from the table", "MESSAGE!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            resetData();
         }
     }
 }
