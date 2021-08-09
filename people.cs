@@ -429,5 +429,19 @@ namespace WindowsFormsApp1
 
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (textBox8.Text == "")
+            {
+                MessageBox.Show("Please Enter the NIC!");
+            }
+            else
+            {
+                string query = "select * from people where nic = '" + textBox8.Text + "'";
+                dataGridView1.DataSource = db.ShowDataInGridView(query);
+                db.CloseConnection();
+            }
+        }
     }
 }

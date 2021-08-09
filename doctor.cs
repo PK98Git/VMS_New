@@ -16,20 +16,13 @@ namespace VMS
     {
 
         newTestvms.dbconnection db = new newTestvms.dbconnection();
+       // newTestvms.Validation va = new newTestvms.Validation();
 
         public doctor()
         {
             InitializeComponent();
         }
 
-        static Regex validate_emailaddress = email_validation();
-        private static Regex email_validation()
-        {
-            string pattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
-            + @"([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)"
-            + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
-            return new Regex(pattern, RegexOptions.IgnoreCase);
-        }
 
         private void bunifuButton6_Click(object sender, EventArgs e)
         {
@@ -78,14 +71,6 @@ namespace VMS
             if (checkEmpty() == false)
             {
 
-                if (validate_emailaddress.IsMatch(bunifuCustomTextbox5.Text) != true)
-                {
-                    MessageBox.Show("Invalid Email Address!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    bunifuCustomTextbox5.Focus();
-                    bunifuCustomTextbox5.Clear();
-
-                    return;
-                }
 
                 string gender;
                 if (bunifuRadioButton1.Checked)
@@ -157,14 +142,6 @@ namespace VMS
             if (checkEmpty() == false)
             {
 
-                if (validate_emailaddress.IsMatch(bunifuCustomTextbox5.Text) != true)
-                {
-                    MessageBox.Show("Invalid Email Address!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    bunifuCustomTextbox5.Focus();
-                    bunifuCustomTextbox5.Clear();
-
-                    return;
-                }
 
                 string gender;
                 if (bunifuRadioButton1.Checked)
@@ -303,6 +280,92 @@ namespace VMS
 
             /*bunifuDataGridView1.DataSource = db.ShowDataInGridView(query);
             db.CloseConnection();*/
+        }
+
+        private void bunifuCustomTextbox3_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void bunifuCustomTextbox8_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+     
+
+        private void bunifuLabel14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuCustomTextbox3_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (newTestvms.Validation.ValidNewNIC(bunifuCustomTextbox3.Text) || newTestvms.Validation.ValidOldNIC(bunifuCustomTextbox3.Text))
+            {
+
+                label3.Visible = false;
+            }
+            else
+            {
+                label3.Visible = true;
+                label3.Text = "Invalid!";
+
+            }
+        }
+
+        private void bunifuCustomTextbox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuCustomTextbox2_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (newTestvms.Validation.ValidName(bunifuCustomTextbox2.Text))
+            {
+
+                label2.Visible = false;
+            }
+            else
+            {
+                label2.Visible = true;
+                label2.Text = "Invalid!";
+
+            }
+        }
+
+        private void bunifuCustomTextbox6_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (newTestvms.Validation.ValidName(bunifuCustomTextbox6.Text))
+            {
+
+                label1.Visible = false;
+            }
+            else
+            {
+                label1.Visible = true;
+                label1.Text = "Invalid!";
+
+            }
+        }
+
+        private void bunifuCustomTextbox5_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (newTestvms.Validation.ValidEmail(bunifuCustomTextbox5.Text))
+            {
+
+                label4.Visible = false;
+            }
+            else
+            {
+                label4.Visible = true;
+                label4.Text = "Invalid!";
+
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
