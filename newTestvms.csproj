@@ -209,6 +209,12 @@
     <Compile Include="Schedule.designer.cs">
       <DependentUpon>Schedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScheduleF\SchedNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScheduleF\SchedNew.Designer.cs">
+      <DependentUpon>SchedNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScheduleF\SheduleData.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -340,6 +346,9 @@
     </Compile>
     <EmbeddedResource Include="Schedule.resx">
       <DependentUpon>Schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleF\SchedNew.resx">
+      <DependentUpon>SchedNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScheduleF\SheduleData.resx">
       <DependentUpon>SheduleData.cs</DependentUpon>

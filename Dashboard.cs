@@ -68,7 +68,16 @@ namespace VMS.Forms
             */
             bunifuPages1.SetPage("SchedulePg");
             MoveSidePanel(ScheduleBTN);
-            
+
+            newTestvms.ScheduleF.SheduledData SD1 = new newTestvms.ScheduleF.SheduledData();
+
+
+            SchedPanel.Controls.Clear();
+            SD1.Dock = DockStyle.Fill;
+            SchedPanel.Controls.Add(SD1);
+            SD1.BringToFront();
+
+
         }
 
         private void bunifuButton4_Click(object sender, EventArgs e)
@@ -232,6 +241,45 @@ namespace VMS.Forms
 
         private void bunifuCustomLabel3_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void MedEqStockBTN_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void VacccineStockBTN_Click(object sender, EventArgs e)
+        {
+            newTestvms.Stocks.StockDashCon STV1 = new newTestvms.Stocks.StockDashCon();
+
+            StocksPanel.Controls.Clear();
+            STV1.Dock = DockStyle.Fill;
+            StocksPanel.Controls.Add(STV1);
+            STV1.BringToFront();
+        }
+
+        private void VcNextBTN_Click(object sender, EventArgs e)
+        {
+            this.tabPage4.Controls.Remove(tabPage4);
+            bunifuPages1.SetPage("VaccinationPg");
+            MoveSidePanel(VaccinationBTN);
+
+            newTestvms.Vaccination.VCNowCon VcnCOn = new newTestvms.Vaccination.VCNowCon() { Dock = DockStyle.Fill, };
+            addPanelC(VcnCOn);
+        }
+
+        private void SchedNewBTN_Click(object sender, EventArgs e)
+        {
+            
+
+
+            newTestvms.ScheduleF.SchedNew SDN1 = new newTestvms.ScheduleF.SchedNew();
+
+            SchedPanel.Controls.Clear();
+            SDN1.Dock = DockStyle.Fill;
+            SchedPanel.Controls.Add(SDN1);
+            SDN1.BringToFront();
 
         }
     }

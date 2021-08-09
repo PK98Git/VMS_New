@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace newTestvms.ScheduleF
 {
-    public partial class SheduleData : UserControl
+    public partial class SheduledData : UserControl
     {
-        public SheduleData()
+        public SheduledData()
         {
             InitializeComponent();
         }
