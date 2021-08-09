@@ -48,20 +48,6 @@ namespace WindowsFormsApp1
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
             this.nic = new System.Windows.Forms.DataGridViewLinkColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +58,19 @@ namespace WindowsFormsApp1
             this.province = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.district = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -275,6 +274,66 @@ namespace WindowsFormsApp1
             this.dataGridView1.Size = new System.Drawing.Size(873, 160);
             this.dataGridView1.TabIndex = 23;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // nic
+            // 
+            this.nic.DataPropertyName = "nic";
+            this.nic.HeaderText = "NIC";
+            this.nic.Name = "nic";
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            // 
+            // dob
+            // 
+            this.dob.DataPropertyName = "dob";
+            this.dob.HeaderText = "DOB";
+            this.dob.Name = "dob";
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
+            // 
+            // phoneno
+            // 
+            this.phoneno.DataPropertyName = "phoneno";
+            this.phoneno.HeaderText = "Phone no";
+            this.phoneno.Name = "phoneno";
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "E-mail";
+            this.email.Name = "email";
+            // 
+            // address
+            // 
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "Address";
+            this.address.Name = "address";
+            // 
+            // province
+            // 
+            this.province.DataPropertyName = "province";
+            this.province.HeaderText = "Province";
+            this.province.Name = "province";
+            // 
+            // district
+            // 
+            this.district.DataPropertyName = "district";
+            this.district.HeaderText = "District";
+            this.district.Name = "district";
+            // 
+            // ds
+            // 
+            this.ds.DataPropertyName = "ds";
+            this.ds.HeaderText = "DS Division";
+            this.ds.Name = "ds";
             // 
             // comboBox1
             // 
@@ -723,18 +782,6 @@ namespace WindowsFormsApp1
             this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             this.maskedTextBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.maskedTextBox1_MouseClick);
             // 
-            // button5
-            // 
-            this.button5.AllowDrop = true;
-            this.button5.Location = new System.Drawing.Point(316, 310);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(67, 30);
-            this.button5.TabIndex = 33;
-            this.button5.Text = "Import";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radioButton2);
@@ -757,6 +804,7 @@ namespace WindowsFormsApp1
             this.button6.TabIndex = 35;
             this.button6.Text = "OK";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBox1
             // 
@@ -788,66 +836,6 @@ namespace WindowsFormsApp1
             this.bunifuDatepicker1.TabIndex = 151;
             this.bunifuDatepicker1.Value = new System.DateTime(2021, 7, 5, 22, 21, 52, 239);
             // 
-            // nic
-            // 
-            this.nic.DataPropertyName = "nic";
-            this.nic.HeaderText = "NIC";
-            this.nic.Name = "nic";
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Name";
-            this.name.Name = "name";
-            // 
-            // dob
-            // 
-            this.dob.DataPropertyName = "dob";
-            this.dob.HeaderText = "DOB";
-            this.dob.Name = "dob";
-            // 
-            // gender
-            // 
-            this.gender.DataPropertyName = "gender";
-            this.gender.HeaderText = "Gender";
-            this.gender.Name = "gender";
-            // 
-            // phoneno
-            // 
-            this.phoneno.DataPropertyName = "phoneno";
-            this.phoneno.HeaderText = "Phone no";
-            this.phoneno.Name = "phoneno";
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "email";
-            this.email.HeaderText = "E-mail";
-            this.email.Name = "email";
-            // 
-            // address
-            // 
-            this.address.DataPropertyName = "address";
-            this.address.HeaderText = "Address";
-            this.address.Name = "address";
-            // 
-            // province
-            // 
-            this.province.DataPropertyName = "province";
-            this.province.HeaderText = "Province";
-            this.province.Name = "province";
-            // 
-            // district
-            // 
-            this.district.DataPropertyName = "district";
-            this.district.HeaderText = "District";
-            this.district.Name = "district";
-            // 
-            // ds
-            // 
-            this.ds.DataPropertyName = "ds";
-            this.ds.HeaderText = "DS Division";
-            this.ds.Name = "ds";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -859,7 +847,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -924,7 +911,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.Button button6;

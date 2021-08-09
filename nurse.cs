@@ -21,14 +21,7 @@ namespace VMS
             InitializeComponent();
         }
 
-        static Regex validate_emailaddress = email_validation();
-        private static Regex email_validation()
-        {
-            string pattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
-            + @"([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)"
-            + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
-            return new Regex(pattern, RegexOptions.IgnoreCase);
-        }
+        
 
         private bool checkEmpty()
         {
@@ -67,14 +60,7 @@ namespace VMS
         {
             if (checkEmpty() == false)
             {
-                if (validate_emailaddress.IsMatch(bunifuCustomTextbox5.Text) != true)
-                {
-                    MessageBox.Show("Invalid Email Address!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    bunifuCustomTextbox5.Focus();
-                    bunifuCustomTextbox5.Clear();
-
-                    return;
-                }
+                
 
                 string gender;
                 if (bunifuRadioButton1.Checked)
@@ -130,14 +116,7 @@ namespace VMS
         {
             if (checkEmpty() == false)
             {
-                if (validate_emailaddress.IsMatch(bunifuCustomTextbox5.Text) != true)
-                {
-                    MessageBox.Show("Invalid Email Address!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    bunifuCustomTextbox5.Focus();
-                    bunifuCustomTextbox5.Clear();
-
-                    return;
-                }
+               
 
                 string gender;
                 if (bunifuRadioButton1.Checked)
