@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,8 @@ namespace newTestvms
 {
     public class dbconnection
     {
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-PVBM0T3\\SQLEXPRESS; Initial Catalog=VMS;Integrated Security=true;");
+
+        SqlConnection con = new SqlConnection("Data Source=PASINDU\\SQLEXPRESS; Initial Catalog=VMS;Integrated Security=true;");
         SqlCommand cmd;
         SqlDataAdapter adapt;
         //ID variable used in Updating and Deleting Record  
